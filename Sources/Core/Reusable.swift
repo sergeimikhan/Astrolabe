@@ -71,9 +71,7 @@ public protocol StyledData {
   var style: Style { get }
 }
 
-public protocol StyledReusable: Reusable {
-  associatedtype Data: StyledData
-
+public protocol StyledReusable: Reusable where Data: StyledData {
   var style: Data.Style? { get set }
 }
 
